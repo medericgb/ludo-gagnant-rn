@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ludo-gagnant-app",
-    "slug": "ludo-gagnant-app",
+    "name": "ludo-gagnant-rn",
+    "slug": "ludo-gagnant-rn",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
