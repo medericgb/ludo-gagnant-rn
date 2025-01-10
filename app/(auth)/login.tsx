@@ -27,19 +27,23 @@ export default function LoginScreen() {
                 </View>
                 
                 <View style={styles.connect}>
+                    <Text style={styles.title}>
+                        Connectez-vous
+                    </Text>
                     <TextInput
-                        style={styles.username}
+                        style={styles.input}
                         label="Nom d'utilisateur ou Email"
                         value={username}
                         onChangeText={setUsername}
                         autoCapitalize="none"
                     />
                     <TextInput
-                        style={styles.password}
+                        style={styles.input}
                         label="Mot de passe"
                         value={password}
                         onChangeText={setPassword}
                         secureTextEntry
+                        autoCapitalize="none"
                         right={<TextInput.Icon icon="eye" />}
                     />
 
@@ -68,6 +72,7 @@ export default function LoginScreen() {
                         </Text>
                     </View>
                 </View>
+
             </ScrollView>
         </SafeAreaView>
     );
@@ -77,11 +82,17 @@ const styles = StyleSheet.create({
     container: {
         // flex: 1,
         height: '100%',
-        backgroundColor: Colors.GRAY2,
+        // backgroundColor: Colors.GRAY2,
     },
     header: {
         margin: 20,
         padding: 20,
+    },
+    title: {
+        padding: 5,
+        fontSize: 30,
+        fontWeight: 'bold',
+        // textAlign: 'center',
     },
     connect: {
         // flex: 1,
@@ -90,9 +101,7 @@ const styles = StyleSheet.create({
         marginTop: 300,
         // backgroundColor: Colors.ORANGE
     },
-    username: {
-    },
-    password: {
+    input: {
         marginTop: 10
     },
     button: {
@@ -100,14 +109,15 @@ const styles = StyleSheet.create({
         marginTop: 50,
         backgroundColor: Colors.BLUE,
         borderRadius: 14,
-        shadowColor: Colors.RED,
+        shadowColor: Colors.DARK_BLUE,
         shadowOpacity: 2,
         elevation: 6,
         shadowRadius: 14
     },
     buttonText: {
         fontSize: 20,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: Colors.WHITE
     },
     forgot: {
         padding: 10,
@@ -117,7 +127,7 @@ const styles = StyleSheet.create({
     },
     forgotText: {
         textAlign: 'right',
-        color: Colors.BLUE,
+        color: Colors.DARK_BLUE,
         fontSize: 16
     },
     register: {
