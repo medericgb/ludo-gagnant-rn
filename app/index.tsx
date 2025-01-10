@@ -1,6 +1,18 @@
+import React, { useEffect } from "react";
 import { Text, View } from "react-native";
+import { router } from "expo-router";
 
 export default function Index() {
+
+  useEffect(() => {
+    // simulate a delay to show the splash screen
+    const timer = setTimeout(() => {
+      router.replace("/login");
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <View
       style={{
@@ -9,7 +21,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Splash screen.</Text>
     </View>
   );
 }
