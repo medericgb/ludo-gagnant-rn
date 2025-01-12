@@ -72,9 +72,9 @@ export default function Register() {
           </Text>
       </Pressable>
 
-      <Text style={styles.alternative}>
+      {/* <Text style={styles.alternative}>
         Ou
-      </Text>
+      </Text> */}
 
     </ScrollView>
   );

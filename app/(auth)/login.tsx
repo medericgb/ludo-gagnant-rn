@@ -6,7 +6,6 @@ import { View,
         SafeAreaView,
         Pressable,
         ScrollView,
-        TouchableOpacity
     } from "react-native";
 import { TextInput } from "react-native-paper";
 import { Link } from "expo-router";
@@ -54,11 +53,11 @@ export default function LoginScreen() {
                     </Pressable>
 
                     <View style={styles.forgot}>
-                        <TouchableOpacity onPress={() => console.log('forget')}>
+                        <Link href={"/forget"}>
                             <Text style={styles.forgotText}>
                                 Mot de passe oublié
                             </Text>
-                        </TouchableOpacity>
+                        </Link>
                     </View>
 
                     <View style={styles.register}>
@@ -132,12 +131,13 @@ const styles = StyleSheet.create({
     },
     register: {
         padding: 5,
-        margin: 10
+        margin: 10,
+        flexDirection: 'row'
     },
     registerText: {
         fontSize: 18,
         fontWeight: 'black',
-        textAlign: 'center'
+        textAlign: 'center',
     },
     registerTextOp: {
         fontSize: 18,
