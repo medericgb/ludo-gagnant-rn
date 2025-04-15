@@ -7,7 +7,7 @@ export default function Index() {
   useEffect(() => {
     // simulate a delay to show the splash screen
     const timer = setTimeout(() => {
-      router.replace("/login");
+      router.replace("/home");
     }, 3000);
 
     return () => clearTimeout(timer);
