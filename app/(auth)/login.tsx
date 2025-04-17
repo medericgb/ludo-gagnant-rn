@@ -79,13 +79,13 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
-        height: '100%',
+        flex: 1,
         // backgroundColor: Colors.GRAY2,
     },
     header: {
         margin: 20,
         padding: 20,
+        // flex: 1
     },
     title: {
         padding: 5,
@@ -94,11 +94,10 @@ const styles = StyleSheet.create({
         // textAlign: 'center',
     },
     connect: {
-        // flex: 1,
+        // flex: 3,
         justifyContent: "center",
         margin: 20,
-        marginTop: 300,
-        // backgroundColor: Colors.ORANGE
+        // backgroundColor: Colors.ORANGE,
     },
     input: {
         marginTop: 10
