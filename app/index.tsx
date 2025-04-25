@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
 import { Text, View } from "react-native";
 import { router } from "expo-router";
+// import { Play_400Regular, useFonts } from '@expo-google-fonts/play';
 
 export default function Index() {
+  // const [loaded, error] = useFonts({
+  //   Play_400Regular,
+  // });
 
   useEffect(() => {
     // simulate a delay to show the splash screen
     const timer = setTimeout(() => {
-      router.replace("/login");
+      router.replace("/home");
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -18,10 +22,10 @@ export default function Index() {
       style={{
         flex: 1,
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "center"
       }}
     >
-      <Text>Splash screen.</Text>
+      {/* <Text style={{ fontSize: 38, color: 'white' }}>Ludo Gagnant</Text> */}
     </View>
   );
 }
