@@ -8,11 +8,11 @@ import { View,
         ScrollView,
     } from "react-native";
 import { TextInput } from "react-native-paper";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import Colors from "@/constants/Colors";
 
 export default function LoginScreen() {
-
+    const router = useRouter();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -46,7 +46,9 @@ export default function LoginScreen() {
                         right={<TextInput.Icon icon="eye" />}
                     />
 
-                    <Pressable style={styles.button} onPress={() => console.log('connecté')}>
+                    <Pressable 
+                        style={({pressed}) => (pressed ? styles.buttonPressed : styles.button)} 
+                        onPress={() => router.push("/home")}>
                         <Text style={styles.buttonText}>
                             SE CONNECTER
                         </Text>
@@ -108,6 +110,16 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.BLUE,
         borderRadius: 14,
         shadowColor: Colors.DARK_BLUE,
+        shadowOpacity: 2,
+        elevation: 6,
+        shadowRadius: 14
+    },
+    buttonPressed: {
+        padding: 14,
+        marginTop: 50,
+        backgroundColor: Colors.DARK_BLUE,
+        borderRadius: 14,
+        shadowColor: Colors.BLUE,
         shadowOpacity: 2,
         elevation: 6,
         shadowRadius: 14

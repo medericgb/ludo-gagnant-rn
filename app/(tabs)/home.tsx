@@ -7,20 +7,26 @@ import { View,
         Pressable
     } from 'react-native';
 import Colors from '@/constants/Colors';
+import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
+  const router = useRouter();
+
   return (
     <SafeAreaView style={styles.container}>
       {/* <StatusBar hidden={true} /> */}
       {/* <View style={styles.party}> */}
 
-        <Pressable style={styles.newButton} onPress={() => console.log('yo')}>
+        <Pressable 
+          style={({pressed}) => (pressed ? styles.newButtonPressed : styles.newButton)} 
+          onPress={() => router.push("/register")}>
           <Text style={styles.newText}>
             NOUVELLE PARTIE
           </Text>
         </Pressable>
 
-        <Pressable style={styles.joinButton}>
+        <Pressable 
+          style={({pressed}) => (pressed ? styles.joinButtonPressed : styles.joinButton)}>
           <Text style={styles.joinText}>
             REJOINDRE PARTIE
           </Text>
@@ -55,6 +61,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
   },
+  newButtonPressed: {
+    padding: 15,
+    backgroundColor: Colors.DARK_GOLDEN,
+    marginTop: 60,
+    margin: 15,
+    height: '15%',
+    width: '45%',
+    borderRadius: 15,
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
   newText: {
     fontSize: 30,
     textAlign: 'center',
@@ -63,6 +80,16 @@ const styles = StyleSheet.create({
   },
   joinButton: {
     backgroundColor: Colors.GREEN,
+    margin: 15,
+    height: '15%',
+    width: '45%',
+    borderRadius: 15,
+    alignItems: 'center',
+    alignSelf: 'center',
+    padding: 15
+  },
+  joinButtonPressed: {
+    backgroundColor: Colors.DARK_GREEN,
     margin: 15,
     height: '15%',
     width: '45%',

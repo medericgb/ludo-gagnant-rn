@@ -66,7 +66,9 @@ export default function Register() {
         right={<TextInput.Icon icon="eye" />}
       />
 
-      <Pressable style={styles.button} onPress={() => console.log('inscrit')}>
+      <Pressable 
+        style={({pressed}) => (pressed ? styles.buttonPressed : styles.button)} 
+        onPress={() => console.log('inscrit')}>
           <Text style={styles.buttonText}>
               S'INSCRIRE
           </Text>
@@ -105,6 +107,16 @@ const styles = StyleSheet.create({
     elevation: 6,
     shadowRadius: 14
   },
+  buttonPressed: {
+    padding: 14,
+    marginTop: 50,
+    backgroundColor: Colors.DARK_BLUE,
+    borderRadius: 14,
+    shadowColor: Colors.BLUE,
+    shadowOpacity: 2,
+    elevation: 6,
+    shadowRadius: 14
+},
   buttonText: {
     fontSize: 20,
     textAlign: 'center',
