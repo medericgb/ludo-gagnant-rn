@@ -19,7 +19,7 @@ export default function HomeScreen() {
 
         <Pressable 
           style={({pressed}) => (pressed ? styles.newButtonPressed : styles.newButton)} 
-          onPress={() => router.push("/register")}>
+          onPress={() => router.push("/webview")}>
           <Text style={styles.newText}>
             NOUVELLE PARTIE
           </Text>
